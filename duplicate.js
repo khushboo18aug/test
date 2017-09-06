@@ -1,3 +1,5 @@
+var num = [1,2,3];
+
 var values = [
     { name: 'someName1' },
     { name: 'someName2' },
