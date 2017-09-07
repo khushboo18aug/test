@@ -7,18 +7,20 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-const user = {
+const users = {
   email: 'khushboo@gmail.com',
   password: '123456',
+  address: 'civil lines',
 };
 
 app.post('/login', [
   body('emailId').isEmail().withMessage('Not a valid email'),
-  body('passcode').isLength({ min: 5 }).matches(/\d/)
+  body('passcode').isLength({ min: 5 }).matches(/\d/),
+  body('address.street').exists()
   
 ], function(req, res, next) {
     const errors = validationResult(req);
-    const user = matchedData(req);
+    const user = matchedData(req);        
     if (!errors.isEmpty()) {
      return res.status(422).json({ errors: errors.mapped() });
     }
@@ -27,7 +29,8 @@ app.post('/login', [
   }, function(req,res) {
       console.log(req.body.emailId);
       console.log(req.body.passcode);
-      if (user.email == req.body.emailId && req.body.passcode == user.password) {
+      console.log(req.body.address);
+      if (users.email == req.body.emailId && req.body.passcode == users.password) {
         console.log("user is valid"); 
       }else {
         console.log("user is invalid");       
