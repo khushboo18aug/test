@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/khushboo18aug/test/issues"
   },
-  "homepage": "https://github.com/khushboo18aug/test#readme"
+  "homepage": "https://github.com/khushboo18aug/test#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express-validation": "^1.0.2",
+    "nodemon": "^1.12.0"
+  }
 }
