@@ -2,10 +2,14 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const { body,check, param, validationResult } = require('express-validator/check');
 const { matchedData } = require('express-validator/filter');
+// const expressJWT = require('express-jwt');
+// const jwt = require('jsonwebtoken');
+const jwt = require('express-jwt');
 
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use expressJWT();
 
 const users = {
   email: 'khushboo@gmail.com',

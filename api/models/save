@@ -1,0 +1,4 @@
+test@1.0.0 C:\Users\Earthone\GitHub\test
++-- UNMET PEER DEPENDENCY joi@*
+`-- jsonwebtoken@8.0.0 
+

@@ -67,12 +67,6 @@ app.post('/company', function(req,res) {
   });
 });
 
-
-app.listen(3000,() =>{
-  console.log("app is listening on port 3000");
-
-});
-
 app.get('/user/:userId', (req, res) => {
   User.findById(req.params.userId)
     .then(result => Company.findById(result.company))
@@ -114,4 +108,9 @@ app.delete('/user/:userId', (req,res)=> {
       res.status(500);
     }
   });
+});
+
+app.listen(3000,() =>{
+  console.log("app is listening on port 3000");
+
 });
